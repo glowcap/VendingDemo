@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		4A4B873020115DAA0077E215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B872F20115DAA0077E215 /* AppDelegate.swift */; };
-		4A4B873220115DAA0077E215 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B873120115DAA0077E215 /* ViewController.swift */; };
+		4A4B873220115DAA0077E215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B873120115DAA0077E215 /* MainViewController.swift */; };
 		4A4B873520115DAA0077E215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4B873320115DAA0077E215 /* Main.storyboard */; };
 		4A4B873720115DAA0077E215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A4B873620115DAA0077E215 /* Assets.xcassets */; };
 		4A4B873A20115DAA0077E215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4B873820115DAA0077E215 /* LaunchScreen.storyboard */; };
+		4A4B874220115DF20077E215 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B874120115DF20077E215 /* Drink.swift */; };
+		4A4B874420115EC00077E215 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B874320115EC00077E215 /* Constants.swift */; };
+		4A4B8746201167CA0077E215 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B8745201167CA0077E215 /* RoundButton.swift */; };
+		4A4B874820116CC90077E215 /* ShadowedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B874720116CC90077E215 /* ShadowedView.swift */; };
+		4A4B874A201174160077E215 /* MainViewController+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B8749201174160077E215 /* MainViewController+helper.swift */; };
+		4A4B875120117CEA0077E215 /* VendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B875020117CEA0077E215 /* VendingCell.swift */; };
+		4A4B87552011832B0077E215 /* InStockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B87542011832B0077E215 /* InStockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4A4B872C20115DAA0077E215 /* TenTenVending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenTenVending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4B872F20115DAA0077E215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A4B873120115DAA0077E215 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A4B873120115DAA0077E215 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4A4B873420115DAA0077E215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A4B873620115DAA0077E215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A4B873920115DAA0077E215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A4B873B20115DAA0077E215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A4B874120115DF20077E215 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
+		4A4B874320115EC00077E215 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4A4B8745201167CA0077E215 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		4A4B874720116CC90077E215 /* ShadowedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowedView.swift; sourceTree = "<group>"; };
+		4A4B8749201174160077E215 /* MainViewController+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+helper.swift"; sourceTree = "<group>"; };
+		4A4B875020117CEA0077E215 /* VendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingCell.swift; sourceTree = "<group>"; };
+		4A4B87542011832B0077E215 /* InStockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InStockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +69,76 @@
 			isa = PBXGroup;
 			children = (
 				4A4B872F20115DAA0077E215 /* AppDelegate.swift */,
-				4A4B873120115DAA0077E215 /* ViewController.swift */,
+				4A4B8752201182D60077E215 /* VendingCell */,
+				4A4B874B20117C520077E215 /* Main */,
+				4A4B874F20117CCB0077E215 /* Shared */,
 				4A4B873320115DAA0077E215 /* Main.storyboard */,
 				4A4B873620115DAA0077E215 /* Assets.xcassets */,
 				4A4B873820115DAA0077E215 /* LaunchScreen.storyboard */,
 				4A4B873B20115DAA0077E215 /* Info.plist */,
 			);
 			path = TenTenVending;
+			sourceTree = "<group>";
+		};
+		4A4B874B20117C520077E215 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4A4B874E20117CA30077E215 /* Models */,
+				4A4B874C20117C6A0077E215 /* Controllers */,
+				4A4B874D20117C7C0077E215 /* Views */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4A4B874C20117C6A0077E215 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A4B873120115DAA0077E215 /* MainViewController.swift */,
+				4A4B8749201174160077E215 /* MainViewController+helper.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4A4B874D20117C7C0077E215 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A4B874720116CC90077E215 /* ShadowedView.swift */,
+				4A4B8745201167CA0077E215 /* RoundButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A4B874E20117CA30077E215 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A4B874120115DF20077E215 /* Drink.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A4B874F20117CCB0077E215 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4A4B874320115EC00077E215 /* Constants.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		4A4B8752201182D60077E215 /* VendingCell */ = {
+			isa = PBXGroup;
+			children = (
+				4A4B8753201182EE0077E215 /* Controller */,
+			);
+			path = VendingCell;
+			sourceTree = "<group>";
+		};
+		4A4B8753201182EE0077E215 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A4B875020117CEA0077E215 /* VendingCell.swift */,
+				4A4B87542011832B0077E215 /* InStockView.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +213,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A4B873220115DAA0077E215 /* ViewController.swift in Sources */,
+				4A4B8746201167CA0077E215 /* RoundButton.swift in Sources */,
+				4A4B87552011832B0077E215 /* InStockView.swift in Sources */,
+				4A4B875120117CEA0077E215 /* VendingCell.swift in Sources */,
+				4A4B873220115DAA0077E215 /* MainViewController.swift in Sources */,
+				4A4B874A201174160077E215 /* MainViewController+helper.swift in Sources */,
+				4A4B874220115DF20077E215 /* Drink.swift in Sources */,
+				4A4B874820116CC90077E215 /* ShadowedView.swift in Sources */,
 				4A4B873020115DAA0077E215 /* AppDelegate.swift in Sources */,
+				4A4B874420115EC00077E215 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NT4ZPH7Z6M;
 				INFOPLIST_FILE = TenTenVending/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = daymein.gregorio.TenTenVending;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +377,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NT4ZPH7Z6M;
 				INFOPLIST_FILE = TenTenVending/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = daymein.gregorio.TenTenVending;
 				PRODUCT_NAME = "$(TARGET_NAME)";
