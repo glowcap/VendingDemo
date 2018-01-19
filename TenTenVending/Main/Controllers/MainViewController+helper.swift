@@ -20,13 +20,13 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
       return VendingCell()
     }
     
-    cell.model = drinks[indexPath.row]
+    cell.model = items[indexPath.row]
     
     return cell
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return drinks.count
+    return items.count
   }
   
   /// Delegate functions
@@ -38,6 +38,15 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     layout.minimumLineSpacing = 0
     layout.invalidateLayout()
     return CGSize(width: collectionView.bounds.width / 5, height: collectionView.bounds.height / 3)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let cells = collectionView.visibleCells as? [VendingCell],
+          let cell = collectionView.cellForItem(at: indexPath) as? VendingCell
+    else { return }
+    cells.forEach { $0.itemSelected = false }
+    cell.itemSelected = true
+    itemToPurchasePosition = indexPath
   }
   
 }

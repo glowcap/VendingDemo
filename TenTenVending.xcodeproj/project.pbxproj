@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A4B5A2F20118571005D0266 /* VendingCell+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */; };
+		4A4B5A3120118FB4005D0266 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A3020118FB4005D0266 /* User.swift */; };
 		4A4B873020115DAA0077E215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B872F20115DAA0077E215 /* AppDelegate.swift */; };
 		4A4B873220115DAA0077E215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B873120115DAA0077E215 /* MainViewController.swift */; };
 		4A4B873520115DAA0077E215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4B873320115DAA0077E215 /* Main.storyboard */; };
@@ -19,9 +21,13 @@
 		4A4B874A201174160077E215 /* MainViewController+helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B8749201174160077E215 /* MainViewController+helper.swift */; };
 		4A4B875120117CEA0077E215 /* VendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B875020117CEA0077E215 /* VendingCell.swift */; };
 		4A4B87552011832B0077E215 /* InStockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B87542011832B0077E215 /* InStockView.swift */; };
+		79D6BFD8C0D4B89723FCEF57 /* Pods_TenTenVending.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05D9BD11E046294799BD467 /* Pods_TenTenVending.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22F08576954F2D94CDEBE42B /* Pods-TenTenVending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenTenVending.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenTenVending/Pods-TenTenVending.release.xcconfig"; sourceTree = "<group>"; };
+		4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VendingCell+Helpers.swift"; sourceTree = "<group>"; };
+		4A4B5A3020118FB4005D0266 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A4B872C20115DAA0077E215 /* TenTenVending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenTenVending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4B872F20115DAA0077E215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A4B873120115DAA0077E215 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		4A4B8749201174160077E215 /* MainViewController+helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+helper.swift"; sourceTree = "<group>"; };
 		4A4B875020117CEA0077E215 /* VendingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendingCell.swift; sourceTree = "<group>"; };
 		4A4B87542011832B0077E215 /* InStockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InStockView.swift; sourceTree = "<group>"; };
+		AFA8CDC66A3CA97508AE920F /* Pods-TenTenVending.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenTenVending.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TenTenVending/Pods-TenTenVending.debug.xcconfig"; sourceTree = "<group>"; };
+		C05D9BD11E046294799BD467 /* Pods_TenTenVending.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TenTenVending.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79D6BFD8C0D4B89723FCEF57 /* Pods_TenTenVending.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03938793A059373EC3C4DC16 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFA8CDC66A3CA97508AE920F /* Pods-TenTenVending.debug.xcconfig */,
+				22F08576954F2D94CDEBE42B /* Pods-TenTenVending.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4A4B872320115DAA0077E215 = {
 			isa = PBXGroup;
 			children = (
 				4A4B872E20115DAA0077E215 /* TenTenVending */,
 				4A4B872D20115DAA0077E215 /* Products */,
+				03938793A059373EC3C4DC16 /* Pods */,
+				8064CB58089405FA0C94260A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				4A4B874320115EC00077E215 /* Constants.swift */,
+				4A4B5A3020118FB4005D0266 /* User.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -136,9 +157,18 @@
 			isa = PBXGroup;
 			children = (
 				4A4B875020117CEA0077E215 /* VendingCell.swift */,
+				4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */,
 				4A4B87542011832B0077E215 /* InStockView.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		8064CB58089405FA0C94260A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C05D9BD11E046294799BD467 /* Pods_TenTenVending.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +178,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A4B873E20115DAA0077E215 /* Build configuration list for PBXNativeTarget "TenTenVending" */;
 			buildPhases = (
+				373DCDBFE5C613B599D22F92 /* [CP] Check Pods Manifest.lock */,
 				4A4B872820115DAA0077E215 /* Sources */,
 				4A4B872920115DAA0077E215 /* Frameworks */,
 				4A4B872A20115DAA0077E215 /* Resources */,
+				6C1C4ECA7C6FCFF1FB8CAB71 /* [CP] Embed Pods Frameworks */,
+				FF1341929144B126D6C01E44 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,6 +241,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		373DCDBFE5C613B599D22F92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TenTenVending-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C1C4ECA7C6FCFF1FB8CAB71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TenTenVending/Pods-TenTenVending-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TenTenVending/Pods-TenTenVending-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF1341929144B126D6C01E44 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TenTenVending/Pods-TenTenVending-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A4B872820115DAA0077E215 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,10 +305,12 @@
 				4A4B875120117CEA0077E215 /* VendingCell.swift in Sources */,
 				4A4B873220115DAA0077E215 /* MainViewController.swift in Sources */,
 				4A4B874A201174160077E215 /* MainViewController+helper.swift in Sources */,
+				4A4B5A2F20118571005D0266 /* VendingCell+Helpers.swift in Sources */,
 				4A4B874220115DF20077E215 /* Drink.swift in Sources */,
 				4A4B874820116CC90077E215 /* ShadowedView.swift in Sources */,
 				4A4B873020115DAA0077E215 /* AppDelegate.swift in Sources */,
 				4A4B874420115EC00077E215 /* Constants.swift in Sources */,
+				4A4B5A3120118FB4005D0266 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +445,7 @@
 		};
 		4A4B873F20115DAA0077E215 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFA8CDC66A3CA97508AE920F /* Pods-TenTenVending.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -372,6 +462,7 @@
 		};
 		4A4B874020115DAA0077E215 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22F08576954F2D94CDEBE42B /* Pods-TenTenVending.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

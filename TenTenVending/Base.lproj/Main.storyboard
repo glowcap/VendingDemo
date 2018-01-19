@@ -247,7 +247,7 @@
                         <outlet property="cashDisplay" destination="SWz-xW-rOU" id="TUb-cK-oVo"/>
                         <outlet property="collectionHeight" destination="y8k-dx-LJ0" id="Spu-MR-6Sd"/>
                         <outlet property="pointButton" destination="wwZ-8x-CxD" id="Lxd-3y-oiC"/>
-                        <outlet property="pointDisplay" destination="MPc-e2-1lL" id="TUd-C2-mxl"/>
+                        <outlet property="pointDisplay" destination="bci-4X-2oy" id="oGi-fB-CDI"/>
                         <outlet property="vendingCollection" destination="rL4-dI-ATQ" id="OuX-YD-LWN"/>
                     </connections>
                 </viewController>
