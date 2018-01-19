@@ -15,7 +15,7 @@ struct Drink {
   let price: Int
   let isCold: Bool
   let position: Int
-  let quantity: Int
+  var quantity: Int
   
 }
 
@@ -32,7 +32,7 @@ extension Drink: Comparable {
 }
 
 let dummyDrinks = [
-  Drink(id: "ck123", bottle: #imageLiteral(resourceName: "Coke"), price: 160, isCold: true, position: 0, quantity: 10),
+  Drink(id: "ck123", bottle: #imageLiteral(resourceName: "Coke"), price: 160, isCold: true, position: 0, quantity: 1),
   Drink(id: "gr123", bottle: #imageLiteral(resourceName: "Grape"), price: 160, isCold: true, position: 1, quantity: 10),
   Drink(id: "en123", bottle: #imageLiteral(resourceName: "EnergyDrink"), price: 160, isCold: true, position: 2, quantity: 10),
   Drink(id: "pk123", bottle: #imageLiteral(resourceName: "Pinky"), price: 160, isCold: true, position: 3, quantity: 10),

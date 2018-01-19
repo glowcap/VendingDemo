@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 @IBDesignable final class RoundButton: UIButton {
   
@@ -23,6 +24,14 @@ import UIKit
   
   private func updateCornerRadius() {
     layer.cornerRadius = rounded ? frame.size.height / 2 : 0
+  }
+  
+  func springToLarge() {
+    guard let anim = POPSpringAnimation(propertyNamed: kPOPViewScaleXY) else { return }
+    anim.velocity = NSValue(cgSize: CGSize(width: 2.5, height: 2.50))
+    anim.toValue = NSValue(cgSize: CGSize(width: 1.0, height: 1.0))
+    anim.springBounciness = 12.0
+    self.pop_add(anim, forKey: "SpringToLargeAnimation")
   }
   
 }

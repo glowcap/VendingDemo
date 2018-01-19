@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4A4B5A2F20118571005D0266 /* VendingCell+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */; };
 		4A4B5A3120118FB4005D0266 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A3020118FB4005D0266 /* User.swift */; };
+		4A4B5A33201194B8005D0266 /* WarningProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A32201194B8005D0266 /* WarningProtocol.swift */; };
+		4A4B5A3520119B16005D0266 /* FundsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A3420119B16005D0266 /* FundsLabel.swift */; };
 		4A4B873020115DAA0077E215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B872F20115DAA0077E215 /* AppDelegate.swift */; };
 		4A4B873220115DAA0077E215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B873120115DAA0077E215 /* MainViewController.swift */; };
 		4A4B873520115DAA0077E215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4B873320115DAA0077E215 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 		22F08576954F2D94CDEBE42B /* Pods-TenTenVending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenTenVending.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenTenVending/Pods-TenTenVending.release.xcconfig"; sourceTree = "<group>"; };
 		4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VendingCell+Helpers.swift"; sourceTree = "<group>"; };
 		4A4B5A3020118FB4005D0266 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4A4B5A32201194B8005D0266 /* WarningProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningProtocol.swift; sourceTree = "<group>"; };
+		4A4B5A3420119B16005D0266 /* FundsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FundsLabel.swift; sourceTree = "<group>"; };
 		4A4B872C20115DAA0077E215 /* TenTenVending.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenTenVending.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4B872F20115DAA0077E215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A4B873120115DAA0077E215 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,14 @@
 				22F08576954F2D94CDEBE42B /* Pods-TenTenVending.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4A4B5A382011A093005D0266 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A4B87542011832B0077E215 /* InStockView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4A4B872320115DAA0077E215 = {
@@ -124,6 +136,7 @@
 			children = (
 				4A4B874720116CC90077E215 /* ShadowedView.swift */,
 				4A4B8745201167CA0077E215 /* RoundButton.swift */,
+				4A4B5A3420119B16005D0266 /* FundsLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				4A4B874320115EC00077E215 /* Constants.swift */,
+				4A4B5A32201194B8005D0266 /* WarningProtocol.swift */,
 				4A4B5A3020118FB4005D0266 /* User.swift */,
 			);
 			path = Shared;
@@ -149,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				4A4B8753201182EE0077E215 /* Controller */,
+				4A4B5A382011A093005D0266 /* Views */,
 			);
 			path = VendingCell;
 			sourceTree = "<group>";
@@ -158,7 +173,6 @@
 			children = (
 				4A4B875020117CEA0077E215 /* VendingCell.swift */,
 				4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */,
-				4A4B87542011832B0077E215 /* InStockView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,10 +314,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4B5A33201194B8005D0266 /* WarningProtocol.swift in Sources */,
 				4A4B8746201167CA0077E215 /* RoundButton.swift in Sources */,
 				4A4B87552011832B0077E215 /* InStockView.swift in Sources */,
 				4A4B875120117CEA0077E215 /* VendingCell.swift in Sources */,
 				4A4B873220115DAA0077E215 /* MainViewController.swift in Sources */,
+				4A4B5A3520119B16005D0266 /* FundsLabel.swift in Sources */,
 				4A4B874A201174160077E215 /* MainViewController+helper.swift in Sources */,
 				4A4B5A2F20118571005D0266 /* VendingCell+Helpers.swift in Sources */,
 				4A4B874220115DF20077E215 /* Drink.swift in Sources */,

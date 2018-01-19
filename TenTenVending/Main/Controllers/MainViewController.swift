@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, WarningProtocol {
   
   enum PaymentType {
     case cash
@@ -26,13 +26,14 @@ class MainViewController: UIViewController {
 
   @IBOutlet weak var vendingCollection: UICollectionView!
   @IBOutlet weak var collectionHeight: NSLayoutConstraint!
-  @IBOutlet weak var pointDisplay: UILabel!
-  @IBOutlet weak var cashDisplay: UILabel!
+  @IBOutlet weak var pointDisplay: FundsLabel!
+  @IBOutlet weak var cashDisplay: FundsLabel!
   @IBOutlet weak var pointButton: RoundButton!
   @IBOutlet weak var cashButton: RoundButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureNavBar()
     vendingCollection.delegate   = self
     vendingCollection.dataSource = self
     
@@ -41,29 +42,41 @@ class MainViewController: UIViewController {
     vendingCollection.reloadData()
   }
   
+  private func configureNavBar() {
+    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 80, height: 28))
+    imageView.contentMode = .scaleAspectFit
+    let image = #imageLiteral(resourceName: "LogoSmall")
+    imageView.image = image
+    navigationItem.titleView = imageView
+  }
+  
   private func updateDisplays() {
     pointDisplay.text = String(describing: user.points)
     cashDisplay.text = String(describing: user.cash)
   }
 
-  @IBAction func pointBtnTapped(_ sender: UIButton) {
-    guard itemToPurchasePosition != nil
+  @IBAction func pointBtnTapped(_ sender: RoundButton) {
+    guard itemToPurchasePosition != nil,
+          items[itemToPurchasePosition.row].quantity > 0
     else { return }
     let price = items[itemToPurchasePosition.row].price
     if user.points < price {
-      print("throw error")
+      warning(.insufficientPoints)
     } else {
+      sender.springToLarge()
       buyItem(with: .points, price: price)
     }
   }
   
-  @IBAction func cashBtnTapped(_ sender: UIButton) {
-    guard itemToPurchasePosition != nil
+  @IBAction func cashBtnTapped(_ sender: RoundButton) {
+    guard itemToPurchasePosition != nil,
+          items[itemToPurchasePosition.row].quantity > 0
       else { return }
     let price = items[itemToPurchasePosition.row].price
     if user.cash < price {
-      print("throw error")
+      warning(.insufficientFunds)
     } else {
+      sender.springToLarge()
       buyItem(with: .cash, price: price)
     }
   }
@@ -81,6 +94,8 @@ class MainViewController: UIViewController {
   private func purchaseSelection() {
     guard let cell = vendingCollection.cellForItem(at: itemToPurchasePosition) as? VendingCell else { return }
     cell.vendSelection()
+    items[itemToPurchasePosition.row].quantity -= 1
+    cell.model = items[itemToPurchasePosition.row]
     itemToPurchasePosition = nil
   }
   
