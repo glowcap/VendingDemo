@@ -23,6 +23,7 @@ class MainViewController: UIViewController, WarningProtocol {
   
   var items = [Drink]()
   var itemToPurchasePosition: IndexPath!
+  var longPressForDetails: UILongPressGestureRecognizer!
 
   @IBOutlet weak var vendingCollection: UICollectionView!
   @IBOutlet weak var collectionHeight: NSLayoutConstraint!
@@ -39,7 +40,9 @@ class MainViewController: UIViewController, WarningProtocol {
     
     user  = dummyUser
     items = dummyDrinks
+    
     vendingCollection.reloadData()
+    configureLongPressForDetails()
   }
   
   private func configureNavBar() {
@@ -53,6 +56,21 @@ class MainViewController: UIViewController, WarningProtocol {
   private func updateDisplays() {
     pointDisplay.text = String(describing: user.points)
     cashDisplay.text = String(describing: user.cash)
+  }
+  
+  private func configureLongPressForDetails() {
+    longPressForDetails = UILongPressGestureRecognizer(target: self, action: #selector(getItemDetails(gesture:)))
+    vendingCollection.addGestureRecognizer(longPressForDetails)
+  }
+  
+  @objc private func getItemDetails(gesture: UILongPressGestureRecognizer) {
+    if gesture.state != .began { return }
+    let location = gesture.location(in: vendingCollection)
+    
+    guard let indexPath = vendingCollection.indexPathForItem(at: location) else { return }
+    let item = items[indexPath.row]
+    print("Item: \(item.name)")
+
   }
 
   @IBAction func pointBtnTapped(_ sender: RoundButton) {
