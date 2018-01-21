@@ -24,6 +24,7 @@ class MainViewController: UIViewController, WarningProtocol {
   var items = [Drink]()
   var itemToPurchasePosition: IndexPath!
   var longPressForDetails: UILongPressGestureRecognizer!
+  var detailView: DetailView!
 
   @IBOutlet weak var vendingCollection: UICollectionView!
   @IBOutlet weak var collectionHeight: NSLayoutConstraint!
@@ -67,10 +68,28 @@ class MainViewController: UIViewController, WarningProtocol {
     if gesture.state != .began { return }
     let location = gesture.location(in: vendingCollection)
     
-    guard let indexPath = vendingCollection.indexPathForItem(at: location) else { return }
+    guard let indexPath = vendingCollection.indexPathForItem(at: location),
+    let cell = vendingCollection.cellForItem(at: indexPath)
+    else { return }
+    let center = cell.center
     let item = items[indexPath.row]
-    print("Item: \(item.name)")
-
+    
+    displayDetailView(item: item, at: center)
+  }
+  
+  private func displayDetailView(item: Drink, at location: CGPoint) {
+    if detailView != nil {
+      detailView.removeFromSuperview()
+    }
+    //    detailView = UIView(frame: CGRect(x: center.x, y: center.y, width: 20, height: 20))
+    
+    detailView = DetailView(item: item,
+                            frame: CGRect(x: screenWidth / 2 - DetailView.size.width / 2,
+                                          y: screenHeight / 2 - DetailView.size.height / 2,
+                                          width: DetailView.size.width,
+                                          height: DetailView.size.height))
+    detailView.delegate = self
+    view.addSubview(detailView)
   }
 
   @IBAction func pointBtnTapped(_ sender: RoundButton) {
@@ -115,6 +134,14 @@ class MainViewController: UIViewController, WarningProtocol {
     items[itemToPurchasePosition.row].quantity -= 1
     cell.model = items[itemToPurchasePosition.row]
     itemToPurchasePosition = nil
+  }
+  
+}
+
+extension MainViewController: DetailViewDelegate {
+  
+  func viewDidClose(sender: DetailView) {
+    detailView.removeFromSuperview()
   }
   
 }
