@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 protocol DetailViewDelegate: class {
   func viewDidClose(sender: DetailView)
@@ -52,6 +53,18 @@ class DetailView: UIView {
     contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     contentView.layer.cornerRadius = 4
     contentView.clipsToBounds = true
+  }
+  
+  func springIntoViewFrom(location: CGPoint) {
+    guard let sizeAnim = POPSpringAnimation(propertyNamed: kPOPViewScaleXY) else { return }
+    sizeAnim.toValue = NSValue(cgSize: CGSize(width: 1, height: 1))
+    sizeAnim.springBounciness = 12
+    self.pop_add(sizeAnim, forKey: "SpringToSize")
+    
+    guard let translationAnim = POPSpringAnimation(propertyNamed: kPOPLayerTranslationXY) else { return }
+    translationAnim.toValue = NSValue(cgPoint: CGPoint(x: (screenWidth/2) - (DetailView.size.width/2) - location.x,
+                                                       y: (screenHeight/2) - (DetailView.size.height/2) - location.y))
+    self.layer.pop_add(translationAnim, forKey: "TranslateToPosition")
   }
   
   @IBAction func closeTapped() {

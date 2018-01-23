@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, WarningProtocol {
+class MainViewController: UIViewController, AnimationEngine, WarningProtocol {
   
   enum PaymentType {
     case cash
@@ -24,6 +24,7 @@ class MainViewController: UIViewController, WarningProtocol {
   var items = [Drink]()
   var itemToPurchasePosition: IndexPath!
   var longPressForDetails: UILongPressGestureRecognizer!
+  var blockerView: UIView!
   var detailView: DetailView!
 
   @IBOutlet weak var vendingCollection: UICollectionView!
@@ -74,7 +75,47 @@ class MainViewController: UIViewController, WarningProtocol {
     let center = cell.center
     let item = items[indexPath.row]
     
-    displayDetailView(item: item, at: center)
+    animateDetailsIntoView(item: item, from: center)
+  }
+  
+  private func animateDetailsIntoView(item: Drink, from location: CGPoint) {
+    guard detailView == nil else { return }
+    displayBlockerView()
+    springInDetailsAbout(item, from: location)
+    
+//    detailView = DetailView(item: item,
+//                            frame: CGRect(x: screenWidth / 2 - DetailView.size.width / 2,
+//                                          y: screenHeight / 2 - DetailView.size.height / 2,
+//                                          width: DetailView.size.width,
+//                                          height: DetailView.size.height))
+//    detailView.delegate = self
+//    detailView.alpha = 0
+//    view.addSubview(detailView)
+//    fadeIn(detailView)
+  }
+  
+  private func displayBlockerView() {
+    blockerView = UIView(frame: UIScreen.main.bounds)
+    blockerView.backgroundColor = .black
+    blockerView.alpha = 0
+    view.insertSubview(blockerView, aboveSubview: vendingCollection)
+    for v in view.subviews {
+      v.isUserInteractionEnabled = false
+    }
+    fadeIn(blockerView, to: 0.7)
+  }
+  
+  private func springInDetailsAbout(_ item: Drink, from location: CGPoint) {
+    detailView = DetailView(item: item, frame: CGRect(x: location.x,
+                                                     y: location.y,
+                                                     width: DetailView.size.width,
+                                                     height: DetailView.size.height))
+    detailView.delegate = self
+    view.addSubview(detailView)
+    detailView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+    fadeIn(detailView)
+    detailView.springIntoViewFrom(location: location)
+    
   }
   
   private func displayDetailView(item: Drink, at location: CGPoint) {
@@ -141,7 +182,20 @@ class MainViewController: UIViewController, WarningProtocol {
 extension MainViewController: DetailViewDelegate {
   
   func viewDidClose(sender: DetailView) {
-    detailView.removeFromSuperview()
+    fadeOut(detailView) { [unowned self] _, complete in
+      guard complete else { return }
+      self.detailView.removeFromSuperview()
+      self.detailView = nil
+      for v in self.view.subviews {
+        v.isUserInteractionEnabled = true
+      }
+    }
+
+    fadeOut(blockerView) { [unowned self] _, completed in
+      guard completed else { return }
+      self.blockerView.removeFromSuperview()
+      self.blockerView = nil
+    }
   }
   
 }
