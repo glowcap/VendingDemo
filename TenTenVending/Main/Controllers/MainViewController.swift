@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, WarningProtocol {
+class MainViewController: UIViewController, AnimationEngine, WarningProtocol {
   
   enum PaymentType {
     case cash
@@ -23,6 +23,9 @@ class MainViewController: UIViewController, WarningProtocol {
   
   var items = [Drink]()
   var itemToPurchasePosition: IndexPath!
+  var longPressForDetails: UILongPressGestureRecognizer!
+  var blockerView: UIView!
+  var detailView: DetailView!
 
   @IBOutlet weak var vendingCollection: UICollectionView!
   @IBOutlet weak var collectionHeight: NSLayoutConstraint!
@@ -39,7 +42,9 @@ class MainViewController: UIViewController, WarningProtocol {
     
     user  = dummyUser
     items = dummyDrinks
+    
     vendingCollection.reloadData()
+    configureLongPressForDetails()
   }
   
   private func configureNavBar() {
@@ -53,6 +58,70 @@ class MainViewController: UIViewController, WarningProtocol {
   private func updateDisplays() {
     pointDisplay.text = String(describing: user.points)
     cashDisplay.text = String(describing: user.cash)
+  }
+  
+  private func configureLongPressForDetails() {
+    longPressForDetails = UILongPressGestureRecognizer(target: self, action: #selector(getItemDetails(gesture:)))
+    vendingCollection.addGestureRecognizer(longPressForDetails)
+  }
+  
+  @objc private func getItemDetails(gesture: UILongPressGestureRecognizer) {
+    if gesture.state != .began { return }
+    let location = gesture.location(in: vendingCollection)
+    
+    guard let indexPath = vendingCollection.indexPathForItem(at: location),
+    let cell = vendingCollection.cellForItem(at: indexPath)
+    else { return }
+    let center = cell.center
+    let item = items[indexPath.row]
+    
+    animateDetailsIntoView(item: item, from: center)
+  }
+  
+  private func animateDetailsIntoView(item: Drink, from location: CGPoint) {
+    guard detailView == nil else { return }
+    displayBlockerView()
+    springInDetailsAbout(item, from: location)
+  }
+  
+  private func displayBlockerView() {
+    blockerView = UIView(frame: UIScreen.main.bounds)
+    blockerView.backgroundColor = .black
+    blockerView.alpha = 0
+    view.insertSubview(blockerView, aboveSubview: vendingCollection)
+    for v in view.subviews {
+      v.isUserInteractionEnabled = false
+    }
+    fadeIn(blockerView, to: 0.7)
+  }
+  
+  private func springInDetailsAbout(_ item: Drink, from location: CGPoint) {
+    // xPos includes -DetailView.size.with/2 to center the detail view to the cell
+    detailView = DetailView(item: item, frame: CGRect(x: location.x - DetailView.size.width/2,
+                                                     y: location.y,
+                                                     width: DetailView.size.width,
+                                                     height: DetailView.size.height))
+    detailView.delegate = self
+    view.addSubview(detailView)
+    detailView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+    fadeIn(detailView)
+    detailView.springIntoViewFrom(location: location)
+    
+  }
+  
+  private func displayDetailView(item: Drink, at location: CGPoint) {
+    if detailView != nil {
+      detailView.removeFromSuperview()
+    }
+    //    detailView = UIView(frame: CGRect(x: center.x, y: center.y, width: 20, height: 20))
+    
+    detailView = DetailView(item: item,
+                            frame: CGRect(x: screenWidth / 2 - DetailView.size.width / 2,
+                                          y: screenHeight / 2 - DetailView.size.height / 2,
+                                          width: DetailView.size.width,
+                                          height: DetailView.size.height))
+    detailView.delegate = self
+    view.addSubview(detailView)
   }
 
   @IBAction func pointBtnTapped(_ sender: RoundButton) {
@@ -97,6 +166,27 @@ class MainViewController: UIViewController, WarningProtocol {
     items[itemToPurchasePosition.row].quantity -= 1
     cell.model = items[itemToPurchasePosition.row]
     itemToPurchasePosition = nil
+  }
+  
+}
+
+extension MainViewController: DetailViewDelegate {
+  
+  func viewDidClose(sender: DetailView) {
+    fadeOut(detailView) { [unowned self] _, complete in
+      guard complete else { return }
+      self.detailView.removeFromSuperview()
+      self.detailView = nil
+      for v in self.view.subviews {
+        v.isUserInteractionEnabled = true
+      }
+    }
+
+    fadeOut(blockerView) { [unowned self] _, completed in
+      guard completed else { return }
+      self.blockerView.removeFromSuperview()
+      self.blockerView = nil
+    }
   }
   
 }
