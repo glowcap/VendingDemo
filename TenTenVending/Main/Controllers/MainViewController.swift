@@ -82,16 +82,6 @@ class MainViewController: UIViewController, AnimationEngine, WarningProtocol {
     guard detailView == nil else { return }
     displayBlockerView()
     springInDetailsAbout(item, from: location)
-    
-//    detailView = DetailView(item: item,
-//                            frame: CGRect(x: screenWidth / 2 - DetailView.size.width / 2,
-//                                          y: screenHeight / 2 - DetailView.size.height / 2,
-//                                          width: DetailView.size.width,
-//                                          height: DetailView.size.height))
-//    detailView.delegate = self
-//    detailView.alpha = 0
-//    view.addSubview(detailView)
-//    fadeIn(detailView)
   }
   
   private func displayBlockerView() {
@@ -106,7 +96,8 @@ class MainViewController: UIViewController, AnimationEngine, WarningProtocol {
   }
   
   private func springInDetailsAbout(_ item: Drink, from location: CGPoint) {
-    detailView = DetailView(item: item, frame: CGRect(x: location.x,
+    // xPos includes -DetailView.size.with/2 to center the detail view to the cell
+    detailView = DetailView(item: item, frame: CGRect(x: location.x - DetailView.size.width/2,
                                                      y: location.y,
                                                      width: DetailView.size.width,
                                                      height: DetailView.size.height))

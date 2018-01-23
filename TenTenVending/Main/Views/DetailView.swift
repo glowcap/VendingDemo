@@ -59,11 +59,13 @@ class DetailView: UIView {
     guard let sizeAnim = POPSpringAnimation(propertyNamed: kPOPViewScaleXY) else { return }
     sizeAnim.toValue = NSValue(cgSize: CGSize(width: 1, height: 1))
     sizeAnim.springBounciness = 12
+    sizeAnim.springSpeed = 18
     self.pop_add(sizeAnim, forKey: "SpringToSize")
     
     guard let translationAnim = POPSpringAnimation(propertyNamed: kPOPLayerTranslationXY) else { return }
-    translationAnim.toValue = NSValue(cgPoint: CGPoint(x: (screenWidth/2) - (DetailView.size.width/2) - location.x,
+    translationAnim.toValue = NSValue(cgPoint: CGPoint(x: (screenWidth/2) - location.x,
                                                        y: (screenHeight/2) - (DetailView.size.height/2) - location.y))
+    translationAnim.springSpeed = 18
     self.layer.pop_add(translationAnim, forKey: "TranslateToPosition")
   }
   
