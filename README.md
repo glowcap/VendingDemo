@@ -13,3 +13,12 @@ Vending App Demo using Facebook Pop for animations.
 - Choose payment type
 - Done!
 
+Now with details!
+- Long press on a item to see the details.
+(The fun doesn't stop)
+
+
+----
+
+This project is a sample focusing on animations. If you'd like to see more, or hire me to make or improve your app, contact me.
+
