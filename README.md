@@ -18,7 +18,8 @@ Now with details!
 (The fun doesn't stop)
 
 ### Things to do
-- [ ] Create JSON data file to mock returned data
+- [ ] ~Add support for iPhoneSE~
+- [ ] ~Create JSON data file to mock returned data~
 - [ ] Loading animations with Lottie (something fun)
 
 ----
