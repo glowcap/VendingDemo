@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A219E5F2018064800305E56 /* iPhoneSE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A219E5E2018064800305E56 /* iPhoneSE.storyboard */; };
+		4A219E61201806A500305E56 /* DeviceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A219E60201806A500305E56 /* DeviceDetector.swift */; };
 		4A4B5A2F20118571005D0266 /* VendingCell+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */; };
 		4A4B5A3120118FB4005D0266 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A3020118FB4005D0266 /* User.swift */; };
 		4A4B5A33201194B8005D0266 /* WarningProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A32201194B8005D0266 /* WarningProtocol.swift */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		22F08576954F2D94CDEBE42B /* Pods-TenTenVending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenTenVending.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenTenVending/Pods-TenTenVending.release.xcconfig"; sourceTree = "<group>"; };
+		4A219E5E2018064800305E56 /* iPhoneSE.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhoneSE.storyboard; sourceTree = "<group>"; };
+		4A219E60201806A500305E56 /* DeviceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetector.swift; sourceTree = "<group>"; };
 		4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VendingCell+Helpers.swift"; sourceTree = "<group>"; };
 		4A4B5A3020118FB4005D0266 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A4B5A32201194B8005D0266 /* WarningProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningProtocol.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				4A4B874B20117C520077E215 /* Main */,
 				4A4B874F20117CCB0077E215 /* Shared */,
 				4A4B873320115DAA0077E215 /* Main.storyboard */,
+				4A219E5E2018064800305E56 /* iPhoneSE.storyboard */,
 				4A4B873620115DAA0077E215 /* Assets.xcassets */,
 				4A4B873820115DAA0077E215 /* LaunchScreen.storyboard */,
 				4A4B873B20115DAA0077E215 /* Info.plist */,
@@ -164,6 +169,7 @@
 				4A5A3E802016CBE300AA1D5D /* AnimationEngine.swift */,
 				4A4B5A32201194B8005D0266 /* WarningProtocol.swift */,
 				4A4B5A3020118FB4005D0266 /* User.swift */,
+				4A219E60201806A500305E56 /* DeviceDetector.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				4A4B873A20115DAA0077E215 /* LaunchScreen.storyboard in Resources */,
 				4A5A3E7F20141C4200AA1D5D /* DetailView.xib in Resources */,
 				4A4B873720115DAA0077E215 /* Assets.xcassets in Resources */,
+				4A219E5F2018064800305E56 /* iPhoneSE.storyboard in Resources */,
 				4A4B873520115DAA0077E215 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +340,7 @@
 				4A4B5A3520119B16005D0266 /* FundsLabel.swift in Sources */,
 				4A4B874A201174160077E215 /* MainViewController+helper.swift in Sources */,
 				4A5A3E812016CBE300AA1D5D /* AnimationEngine.swift in Sources */,
+				4A219E61201806A500305E56 /* DeviceDetector.swift in Sources */,
 				4A4B5A2F20118571005D0266 /* VendingCell+Helpers.swift in Sources */,
 				4A4B874220115DF20077E215 /* Drink.swift in Sources */,
 				4A4B874820116CC90077E215 /* ShadowedView.swift in Sources */,

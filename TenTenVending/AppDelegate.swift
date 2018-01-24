@@ -15,6 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    
+//    let storyboard = UIDevice().type == .iPhoneSE ? UIStoryboard(name: "iPhoneSE", bundle: nil) : UIStoryboard(name: "Main", bundle: nil)
+    
+    var storyboard: UIStoryboard!
+    
+    if UIDevice().type == .simulator {
+      storyboard = UIStoryboard(name: "iPhoneSE", bundle: nil)
+    } else {
+      storyboard = UIStoryboard(name: "Main", bundle: nil)
+    }
+    
+    let vC = storyboard.instantiateViewController(withIdentifier: "MainVC")
+    let navCon = UINavigationController(rootViewController: vC)
+    window?.rootViewController = navCon
+      
     return true
   }
 
