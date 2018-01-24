@@ -18,9 +18,9 @@ Now with details!
 (The fun doesn't stop)
 
 ### Things to do
-[] Solution for iPhoneSE layout
-[] Create JSON data file to mock returned data
-[] Loading animations with Lottie (something fun)
+- [ ] Solution for iPhoneSE layout
+- [ ] Create JSON data file to mock returned data
+- [ ] Loading animations with Lottie (something fun)
 
 ----
 
