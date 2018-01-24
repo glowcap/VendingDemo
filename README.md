@@ -17,6 +17,10 @@ Now with details!
 - Long press on a item to see the details.
 (The fun doesn't stop)
 
+### Things to do
+[] Solution for iPhoneSE layout
+[] Create JSON data file to mock returned data
+[] Loading animations with Lottie (something fun)
 
 ----
 
