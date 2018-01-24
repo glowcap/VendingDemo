@@ -36,7 +36,7 @@ class VendingCell: UICollectionViewCell {
   
   private func configure(model: Drink) {
     bottleDefaultYPos = bottleYPos.constant
-    bottle.image = model.bottle
+    bottle.image = UIImage(named: model.bottleName)
     priceLabel.text = String(describing: model.price)
     priceLabel.backgroundColor = model.isCold ? #colorLiteral(red: 0.01960784314, green: 0.5725490196, blue: 0.9411764706, alpha: 1) : #colorLiteral(red: 0.9215686275, green: 0.08235294118, blue: 0.08235294118, alpha: 1)
     inStockView.backgroundColor = model.quantity > 0 ? #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1) : #colorLiteral(red: 0.9215686275, green: 0.08235294118, blue: 0.08235294118, alpha: 1)

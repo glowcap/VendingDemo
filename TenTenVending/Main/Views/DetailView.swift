@@ -33,7 +33,7 @@ class DetailView: UIView {
     self.init(frame: frame)
     configure()
     nameLbl.text = item.name
-    bottle.image = item.bottle
+    bottle.image = UIImage(named: item.bottleName)
   }
   
   override init(frame: CGRect) {

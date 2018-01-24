@@ -1,0 +1,154 @@
+{
+	"items" : [
+	 {
+	   "id": "ck123",
+	   "name": "Coca-Cola",
+	   "bottle_name": "Coke",
+	   "price": 160,
+	   "is_Cold": true,
+	   "position": 0,
+	   "quantity": 1,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "gr123",
+	   "name": "Grapetastic",
+	   "bottle_name": "Grape",
+	   "price": 160,
+	   "is_Cold": true,
+	   "position": 1,
+	   "quantity": 5,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "en123",
+	   "name": "Pokkari Aide",
+	   "bottle_name": "Pokkari",
+	   "price": 160,
+	   "is_Cold": true,
+	   "position": 2,
+	   "quantity": 4,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "pk123",
+	   "name": "Pinktacular",
+	   "bottle_name": "Pink",
+	   "price": 120,
+	   "is_Cold": true,
+	   "position": 3,
+	   "quantity": 8,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "fn123",
+	   "name": "Orange Fanta",
+	   "bottle_name": "Orange",
+	   "price": 160,
+	   "is_Cold": true,
+	   "position": 4,
+	   "quantity": 10,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "pk123",
+	   "name": "Pinktacular",
+	   "bottle_name": "Pink",
+	   "price": 120,
+	   "is_Cold": true,
+	   "position": 5,
+	   "quantity": 8,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "fn123",
+	   "name": "Orange Fanta",
+	   "bottle_name": "Orange",
+	   "price": 160,
+	   "is_Cold": true,
+	   "position": 6,
+	   "quantity": 10,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "en123",
+	   "name": "Pokkari Aide",
+	   "bottle_name": "Pokkari",
+	   "price": 160,
+	   "is_Cold": true,
+	   "position": 7,
+	   "quantity": 4,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "ck123",
+	   "name": "Coca-Cola",
+	   "bottle_name": "Coke",
+	   "price": 160,
+	   "is_Cold": true,
+	   "position": 8,
+	   "quantity": 1,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "gr123",
+	   "name": "Grapetastic",
+	   "bottle_name": "Grape",
+	   "price": 160,
+	   "is_Cold": true,
+	   "position": 9,
+	   "quantity": 5,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "cf123",
+	   "name": "Coughee",
+	   "bottle_name": "Coffee",
+	   "price": 100,
+	   "is_Cold": false,
+	   "position": 10,
+	   "quantity": 3,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "cf123",
+	   "name": "Coughee",
+	   "bottle_name": "Coffee",
+	   "price": 100,
+	   "is_Cold": false,
+	   "position": 11,
+	   "quantity": 6,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "cf123",
+	   "name": "Coughee",
+	   "bottle_name": "Coffee",
+	   "price": 100,
+	   "isCold": false,
+	   "position": 12,
+	   "quantity": 10,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "cf123",
+	   "name": "Coughee",
+	   "bottle_name": "Coffee",
+	   "price": 100,
+	   "is_Cold": false,
+	   "position": 13,
+	   "quantity": 0,
+	   "nutritional_information": "nil"
+	 },
+	 {
+	   "id": "cf123",
+	   "name": "Coughee",
+	   "bottle_name": "Coffee",
+	   "price": 100,
+	   "is_Cold": false,
+	   "position": 14,
+	   "quantity": 4,
+	   "nutritional_information": "nil"
+	 }
+	]
+}

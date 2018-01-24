@@ -41,9 +41,15 @@ class MainViewController: UIViewController, AnimationEngine, WarningProtocol {
     vendingCollection.dataSource = self
     
     user  = dummyUser
-    items = dummyDrinks
     
-    vendingCollection.reloadData()
+    // simulate connection to retrieve data
+    after(delay: 1.0) { [unowned self] in
+      if let returnedItems = self.loadVendingData() {
+        self.items = returnedItems
+        self.vendingCollection.reloadData()
+      }
+    }
+    
     configureLongPressForDetails()
   }
   
@@ -53,6 +59,20 @@ class MainViewController: UIViewController, AnimationEngine, WarningProtocol {
     let image = #imageLiteral(resourceName: "LogoSmall")
     imageView.image = image
     navigationItem.titleView = imageView
+  }
+  
+  private func loadVendingData() -> [Drink]? {
+    if let url = Bundle.main.url(forResource: "ItemList", withExtension: "json") {
+      do {
+        let data = try Data(contentsOf: url)
+        let decoder = JSONDecoder()
+        let jsonData = try decoder.decode(ResponseData.self, from: data)
+        return jsonData.items
+      } catch let error {
+        print("error to be handled: \(error)")
+      }
+    }
+    return nil
   }
   
   private func updateDisplays() {
