@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A219E5F2018064800305E56 /* iPhoneSE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A219E5E2018064800305E56 /* iPhoneSE.storyboard */; };
 		4A219E61201806A500305E56 /* DeviceDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A219E60201806A500305E56 /* DeviceDetector.swift */; };
+		4A219E6520181F0800305E56 /* ItemList.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A219E6420181F0800305E56 /* ItemList.json */; };
 		4A4B5A2F20118571005D0266 /* VendingCell+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */; };
 		4A4B5A3120118FB4005D0266 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A3020118FB4005D0266 /* User.swift */; };
 		4A4B5A33201194B8005D0266 /* WarningProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B5A32201194B8005D0266 /* WarningProtocol.swift */; };
@@ -35,6 +36,7 @@
 		22F08576954F2D94CDEBE42B /* Pods-TenTenVending.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TenTenVending.release.xcconfig"; path = "Pods/Target Support Files/Pods-TenTenVending/Pods-TenTenVending.release.xcconfig"; sourceTree = "<group>"; };
 		4A219E5E2018064800305E56 /* iPhoneSE.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhoneSE.storyboard; sourceTree = "<group>"; };
 		4A219E60201806A500305E56 /* DeviceDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetector.swift; sourceTree = "<group>"; };
+		4A219E6420181F0800305E56 /* ItemList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ItemList.json; path = "../../../../../../App Assets/TenTenVending/ItemList.json"; sourceTree = "<group>"; };
 		4A4B5A2E20118571005D0266 /* VendingCell+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VendingCell+Helpers.swift"; sourceTree = "<group>"; };
 		4A4B5A3020118FB4005D0266 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4A4B5A32201194B8005D0266 /* WarningProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningProtocol.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				4A4B5A32201194B8005D0266 /* WarningProtocol.swift */,
 				4A4B5A3020118FB4005D0266 /* User.swift */,
 				4A219E60201806A500305E56 /* DeviceDetector.swift */,
+				4A219E6420181F0800305E56 /* ItemList.json */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				4A4B873A20115DAA0077E215 /* LaunchScreen.storyboard in Resources */,
 				4A5A3E7F20141C4200AA1D5D /* DetailView.xib in Resources */,
+				4A219E6520181F0800305E56 /* ItemList.json in Resources */,
 				4A4B873720115DAA0077E215 /* Assets.xcassets in Resources */,
 				4A219E5F2018064800305E56 /* iPhoneSE.storyboard in Resources */,
 				4A4B873520115DAA0077E215 /* Main.storyboard in Resources */,
